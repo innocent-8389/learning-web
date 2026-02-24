@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Web học tập</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎓</text></svg>">
+<style>
+        body {
+            margin: 0;
+            font-family: sans-serif;
+            /* Thêm các dòng dưới đây */
+            background-image: url('https://cellphones.com.vn/sforum/wp-content/uploads/2022/04/5.jpg'); /* Thay link ảnh của bạn vào đây */
+            background-size: cover;      /* Ảnh phủ kín toàn màn hình */
+            background-attachment: fixed; /* Ảnh đứng yên khi bạn cuộn trang (hiệu ứng Parallax) */
+            background-position: center;  /* Căn ảnh vào giữa */
+            background-repeat: no-repeat;
+        }
+        .navbar {
+            background-color: #007AFF;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 60px;
+        }
+        .brand-container { display: flex; align-items: center; gap: 8px; }
+        .logo { height: 55px; width: auto; border-radius: 5px; }
+        .logo-text { display: flex; flex-direction: column; line-height: 1.2; font-weight: bold; }
+        .line-1 { color: white; font-size: 10px; }
+        .line-2 { color: white; font-size: 14px; }
+
+        .search-container { display: flex; }
+        .search-container input { padding: 8px; border: none; border-radius: 4px 0 0 4px; outline: none; }
+        .search-container button {
+            padding: 8px 15px; background-color: #0056b3; color: white;
+            border: none; border-radius: 0 4px 4px 0; cursor: pointer;
+        }
+
+        .content { padding: 20px; text-align: center; }
+        .image-box { display: flex; flex-direction: column; align-items: center; margin-top: 20px; }
+        .image-title { margin-bottom: 10px; color: #f9f7f7; font-size: 30px; }
+        .my-photo { width: 90%; max-width: 1100px; height: auto; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        .nav-buttons { margin-top: 20px; }
+        /* Định nghĩa giao diện nút */
+        .btn-point {
+            padding: 25px 50px; 
+            background: #007AFF; 
+            color: white; 
+            font-size: 20px; 
+            border: none; 
+            border-radius: 5px; 
+            cursor: pointer;
+            transition: 0.4s; /* Giúp hiệu ứng mượt mà */
+        }
+
+        /* Hiệu ứng phát sáng khi di chuột (btn-glow) */
+        .btn-glow:hover {
+            transform: scale(1.05); /* Phóng to nhẹ */
+            box-shadow: 0 0 20px rgba(0, 122, 255, 0.6); /* Tỏa sáng xanh */
+            filter: brightness(1.2); /* Làm nút sáng hơn */
+        }
+        
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .footer-links {
+            margin-bottom: 20px;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #007AFF; /* Đổi màu xanh khi di chuột vào */
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 24px;
+            margin: 0 10px;
+            transition: transform 0.3s, color 0.3s;
+            display: inline-block;
+        }
+
+        /* Hiệu ứng phóng to và đổi màu cho icon */
+        .social-icons a:hover {
+            transform: scale(1.2);
+        }
+
+        .fb:hover { color: #1877F2; }
+        .yt:hover { color: #FF0000; }
+        .web:hover { color: #007AFF; }
+
+        .copyright {
+            font-size: 12px;
+            margin-top: 20px;
+            opacity: 0.6;
+        }
+</style>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="brand-container" onclick="window.location.href='test.html'" style="cursor: pointer;">
+            <img src="https://hcmut.edu.vn/img/nhanDienThuongHieu/01_logobachkhoatoi.png" class="logo" alt="Logo">
+            <div class="logo-text">
+                <span class="line-1">VIETNAM NATIONAL UNIVERSITY HO CHI MINH CITY</span>
+                <span class="line-2">HO CHI MINH CITY UNIVERSITY OF TECHNOLOGY</span>
+            </div>
+        </div>
+
+        <div class="search-container">
+            <input type="text" id="searchInput" list="pagesList" placeholder="Tìm kiếm...">
+            <datalist id="pagesList">
+                <option value="THHT">
+                <option value="Liên hệ">
+                <option value="Thời khóa biểu">
+            </datalist>
+            <button type="button" onclick="searchPage()">Tìm</button>
+        </div>
+    </header>
+
+<main class="content">
+    <div class="image-box">
+        <h2 class="image-title">Thời Khóa Biểu Của Tôi</h2>
+        <img src="tkb.jpeg" alt="TKB" class="my-photo">
+    </div>
+        
+    <div style="display: flex; gap: 10px; justify-content: center; margin-top: 20px;">
+    <div class="btn-glow"></div>
+        <a href="https://docs.google.com/spreadsheets/d/1ZTygqQgVIXSUAdGiXdVHWXygkpApJ0C8AavZi77Yfb0/edit?gid=0#gid=0" target="_blank">
+            <button class="btn-glow" style="padding: 25px 50px; background: #007AFF; color: white; font-size: 20px; border: none; border-radius: 5px; cursor: pointer;">Xem điểm</button>
+        </a>
+
+    </div>
+</main>
+
+<script>
+    function searchPage() {
+        const input = document.getElementById('searchInput').value.toLowerCase().trim();
+        if (input === "thht") {
+            window.location.href = "THHT.html";
+        } else if (input === "lienhe") {
+            window.location.href = "lienhe.html";
+        } else if (input === "trangchu" || input === "home") {
+            window.location.href = "test.html";
+        } else {
+            alert("Không tìm thấy trang! Hãy nhập đúng tên môn học");
+        }
+    }
+            document.getElementById('searchInput').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                searchPage();
+            }
+        });
+</script>
+    <footer>
+        <div class="footer-links">
+            <a href="index.html">Trang Chủ</a>
+            <a href="https://lms.hcmut.edu.vn/login/index.php?loginredirect=1" target="_blank">Cổng LMS</a>
+            <a href="https://mybk.hcmut.edu.vn/app/login" target="_blank">Cổng MyBK/app</a>
+            <a href="lienhe.html">Liên Hệ</a>
+        </div>
+
+        <div class="social-icons">
+            <a href="https://www.facebook.com" target="_blank" class="fb"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.youtube.com" target="_blank" class="yt"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://hcmut.edu.vn/" target="_blank" class="web"><i class="fa-solid fa-globe"></i></a>
+        </div>
+
+        <p class="copyright">© 2026 HCMUT - Trường Đại học Bách khoa - ĐHQG-HCM - Nguyễn Quốc Trung - 2413706</p>
+    </footer>
+</body>
+</html>
