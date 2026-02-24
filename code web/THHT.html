@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Tín hiệu hệ thống</title>
+<style>
+        body {
+            margin: 0;
+            font-family: sans-serif;
+            /* Thêm các dòng dưới đây */
+            background-image: url('https://cdn.pixabay.com/photo/2018/07/14/11/33/earth-3537401_1280.jpg'); /* Thay link ảnh của bạn vào đây */
+            background-size: cover;      /* Ảnh phủ kín toàn màn hình */
+            background-attachment: fixed; /* Ảnh đứng yên khi bạn cuộn trang (hiệu ứng Parallax) */
+            background-position: center;  /* Căn ảnh vào giữa */
+            background-repeat: no-repeat;
+        }
+        .navbar {
+            background-color: #007AFF;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 60px;
+        }
+        .brand-container { display: flex; align-items: center; gap: 8px; }
+        .logo { height: 55px; width: auto; border-radius: 5px; }
+        .logo-text { display: flex; flex-direction: column; line-height: 1.2; font-weight: bold; }
+        .line-1 { color: white; font-size: 10px; }
+        .line-2 { color: white; font-size: 14px; }
+
+        .search-container { display: flex; }
+        .search-container input { padding: 8px; border: none; border-radius: 4px 0 0 4px; outline: none; }
+        .search-container button {
+            padding: 8px 15px; background-color: #0056b3; color: white;
+            border: none; border-radius: 0 4px 4px 0; cursor: pointer;
+        }
+
+        .content { padding: 20px; text-align: center; }
+        .image-box { display: flex; flex-direction: column; align-items: center; margin-top: 20px; }
+        .image-title { margin-bottom: 10px; color: #f9f7f7; font-size: 30px; }
+        .my-photo { width: 90%; max-width: 1100px; height: auto; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        .nav-buttons { margin-top: 20px; }
+        /* Định nghĩa giao diện nút */
+        .btn-point {
+            padding: 25px 50px; 
+            background: #007AFF; 
+            color: white; 
+            font-size: 20px; 
+            border: none; 
+            border-radius: 5px; 
+            cursor: pointer;
+            transition: 0.4s; /* Giúp hiệu ứng mượt mà */
+        }
+
+        /* Hiệu ứng phát sáng khi di chuột (btn-glow) */
+        .btn-glow:hover {
+            transform: scale(1.05); /* Phóng to nhẹ */
+            box-shadow: 0 0 20px rgba(0, 122, 255, 0.6); /* Tỏa sáng xanh */
+            filter: brightness(1.2); /* Làm nút sáng hơn */
+        }
+        
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .footer-links {
+            margin-bottom: 20px;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #007AFF; /* Đổi màu xanh khi di chuột vào */
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 24px;
+            margin: 0 10px;
+            transition: transform 0.3s, color 0.3s;
+            display: inline-block;
+        }
+
+        /* Hiệu ứng phóng to và đổi màu cho icon */
+        .social-icons a:hover {
+            transform: scale(1.2);
+        }
+
+        .fb:hover { color: #1877F2; }
+        .yt:hover { color: #FF0000; }
+        .web:hover { color: #007AFF; }
+
+        .copyright {
+            font-size: 12px;
+            margin-top: 20px;
+            opacity: 0.6;
+        }
+</style>
+
+    <link rel="icon" type="image/x-icon" href="https://cellphones.com.vn/sforum/wp-content/uploads/2024/01/avartar-anime-6.jpg">
+</head>
+<body>
+    <header class="navbar">
+        <div class="brand-container" onclick="window.location.href='test.html'" style="cursor: pointer;">
+            <img src="https://hcmut.edu.vn/img/nhanDienThuongHieu/01_logobachkhoatoi.png" class="logo" alt="Logo">
+            <div class="logo-text">
+                <span class="line-1">VIETNAM NATIONAL UNIVERSITY HO CHI MINH CITY</span>
+                <span class="line-2">HO CHI MINH CITY UNIVERSITY OF TECHNOLOGY</span>
+            </div>
+        </div>
+
+        <div class="search-container">
+            <input type="text" id="searchInput" list="pagesList" placeholder="Tìm kiếm...">
+            <datalist id="pagesList">
+                <option value="THHT">
+                <option value="Liên hệ">
+                <option value="Thời khóa biểu">
+            </datalist>
+            <button type="button" onclick="searchPage()">Tìm</button>
+        </div>
+    </header>
+    
+
+<main class="main-content">
+        <h2 style="text-align: center; color: #12e3a4; font-size: 70px;">Tín hiệu hệ thống</h2>
+
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 20px; margin-top: 30px;">
+            
+            <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                <a href="https://drive.google.com/drive/u/1/folders/1M6rUVdOAu1ocEUXHk6r_fGZI-uzGL7Q0" target="_blank" style="text-decoration: none;">
+                    <button class="btn-glow" style="padding: 20px 40px; background: #35ff03; color: #000; border: none; border-radius: 20px; font-size: 18px; font-weight: bold; cursor: pointer;">Học thêm anh D</button>
+                </a>
+
+                <a href="https://docs.google.com/document/d/1NXpo3TFHDXnms6agBC6-5PLZtW6JY7XO0oxv7_t9gmc/edit?tab=t.4t5cvwyieriq" target="_blank" style="text-decoration: none;">
+                    <button class="btn-glow" style="padding: 20px 40px; background: #07daf6; color: #000; border: none; border-radius: 20px; font-size: 18px; font-weight: bold; cursor: pointer;">Ghi chép bài</button>
+                </a>
+            </div>
+
+            <a href="test.html" style="text-decoration: none;">
+                <button class="btn-glow" style="padding: 15px 60px; background: #6c757d; color: #fff; border: none; border-radius: 50px; font-size: 16px; font-weight: bold; cursor: pointer; display: flex; align-items: center; gap: 8px;">
+                    🏠 Quay về Trang chủ
+                </button>
+            </a>
+        </div>
+
+</main>
+
+<script>
+    function searchPage() {
+        const input = document.getElementById('searchInput').value.toLowerCase().trim();
+        if (input === "THHT") {
+            window.location.href = "THHT.html";
+        } else if (input === "lienhe") {
+            window.location.href = "lienhe.html";
+        } else if (input === "trangchu" || input === "home") {
+            window.location.href = "test.html";
+        } else {
+            alert("Không tìm thấy trang! Hãy nhập đúng tên môn học");
+        }
+    }
+            document.getElementById('searchInput').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                searchPage();
+            }
+        });
+</script>
+</body>
+</html>
